@@ -12,7 +12,7 @@ Develop a prototype that simulates the key functionality of the system, then tes
 
 ## Initial Database Design
 
-Replace this text with notes regarding the DB design.
+This is v1 of the website which is still under going other versions
 
 ![SCREENSHOT OF DB DESIGN](screenshots/example.png)
 
