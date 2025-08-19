@@ -30,7 +30,7 @@ init_datetime(app)  # Handle UTC dates in timestamps
 #-----------------------------------------------------------
 @app.get("/")
 def index():
-    return render_template("pages/home.jinja")
+    return render_template("pages/people.jinja")
 
 
 #-----------------------------------------------------------
@@ -44,17 +44,17 @@ def about():
 #-----------------------------------------------------------
 # Things page route - Show all the things, and new thing form
 #-----------------------------------------------------------
-@app.get("/things/")
+@app.get("/people/")
 def show_all_things():
     with connect_db() as client:
         # Get all the things from the DB
         sql = "SELECT id, name FROM things ORDER BY name ASC"
         params = []
         result = client.execute(sql, params)
-        things = result.rows
+        people = result.rows
 
         # And show them on the page
-        return render_template("pages/things.jinja", things=things)
+        return render_template("pages/people.jinja", people=people)
 
 
 #-----------------------------------------------------------
