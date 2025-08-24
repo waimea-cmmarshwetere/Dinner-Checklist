@@ -10,22 +10,71 @@
 
 {% block title %}
 
-    Flask Demo
+    Flask Demo - All Things
 
 {% endblock %}
 
 
 {% block content %}
 
-    <h1></h1>
+    <h1>Dinner Planner!</h1>
 
-    <p></p>
 
-    <p></p>
+    <article>
 
-    <ul></ul>
+        <ul>
+            {% for thing in things %}
 
-    <a href="/people" role="button">+ Add</a>
+                <li>
+                    <a href="/people/{{ people.id }}">
+                        {{ people.name }}
+                    </a>
+                </li>
+
+            {% else %}
+
+                <p>None!</p>
+
+            {% endfor %}
+        </ul>
+
+    </article>
+
+
+    <article>
+
+        <h3>Add a new dinner plan!</h3>
+
+        <form action="/add" method="POST">
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Family Member"
+                required
+            >
+
+             <input
+                type="text"
+                name="name"
+                placeholder="Meal"
+                required
+            >
+
+            <input
+                type="number"
+                name="price"
+                min="0"
+                placeholder="Date"
+                required
+            >
+
+            <button>+ Add</button>
+
+        </form>
+
+    </article>
 
 {% endblock %}
+
 
