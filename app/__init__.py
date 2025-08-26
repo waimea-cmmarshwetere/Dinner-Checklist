@@ -30,31 +30,23 @@ init_datetime(app)  # Handle UTC dates in timestamps
 #-----------------------------------------------------------
 @app.get("/")
 def index():
-    return render_template("pages/people.jinja")
-
-
-#-----------------------------------------------------------
-# About page route
-#-----------------------------------------------------------
-@app.get("/about/")
-def about():
-    return render_template("pages/about.jinja")
+    return render_template("pages/planner.jinja")
 
 
 #-----------------------------------------------------------
 # Things page route - Show all the things, and new thing form
 #-----------------------------------------------------------
-@app.get("/people/")
+@app.get("/planner/")
 def show_all_things():
     with connect_db() as client:
         # Get all the things from the DB
-        sql = "SELECT id, name FROM things ORDER BY name ASC"
+        sql = "SELECT id, name FROM planner ORDER BY name ASC"
         params = []
         result = client.execute(sql, params)
-        people = result.rows
+        planner = result.rows
 
         # And show them on the page
-        return render_template("pages/people.jinja", people=people)
+        return render_template("pages/planner.jinja", planner=planner)
 
 
 #-----------------------------------------------------------
@@ -93,13 +85,13 @@ def add_a_thing():
 
     with connect_db() as client:
         # Add the thing to the DB
-        sql = "INSERT INTO things (name, price) VALUES (?, ?)"
+        sql = "INSERT INTO planner (name, price) VALUES (?, ?)"
         params = [name, price]
         client.execute(sql, params)
 
         # Go back to the home page
-        flash(f"Thing '{name}' added", "success")
-        return redirect("/things")
+        flash(f"planner '{name}' added", "success")
+        return redirect("/planner")
 
 
 #-----------------------------------------------------------
@@ -109,12 +101,12 @@ def add_a_thing():
 def delete_a_thing(id):
     with connect_db() as client:
         # Delete the thing from the DB
-        sql = "DELETE FROM things WHERE id=?"
+        sql = "DELETE FROM planner WHERE id=?"
         params = [id]
         client.execute(sql, params)
 
         # Go back to the home page
-        flash("Thing deleted", "success")
-        return redirect("/things")
+        flash("Dinner deleted", "success")
+        return redirect("/planner")
 
 
