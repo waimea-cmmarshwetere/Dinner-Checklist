@@ -25,10 +25,10 @@
             <h3>{{ planner.name }}</h3>
         </header>
 
-        <p>Price: <strong>${{ planner.Date }}</strong></p>
+        <p>Name: <strong>${{ planner }}</strong></p>
 
         <footer>
-            <a href="/delete/{{ planner.id }}" onclick="return confirm('Really delete?');">Delete</a>
+            <a href="/delete/{{ Planner.list }}" onclick="return confirm('Really delete?');">Delete</a>
         </footer>
 
     </article>

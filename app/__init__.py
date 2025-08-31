@@ -90,7 +90,7 @@ def add_a_thing():
         client.execute(sql, params)
 
         # Go back to the home page
-        flash(f"planner '{name}' added", "success")
+        flash(f"Dinner Plan '{name}' added", "success")
         return redirect("/planner")
 
 
@@ -101,7 +101,7 @@ def add_a_thing():
 def delete_a_thing(id):
     with connect_db() as client:
         # Delete the thing from the DB
-        sql = "DELETE FROM planner WHERE id=?"
+        sql = "DELETE FROM Planner.list WHERE id=?"
         params = [id]
         client.execute(sql, params)
 
