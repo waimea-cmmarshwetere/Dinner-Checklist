@@ -10,7 +10,7 @@
 
 {% block title %}
 
-    Flask Demo - All Things
+   Dinner Planner!
 
 {% endblock %}
 
@@ -23,11 +23,12 @@
     <article>
 
         <ul>
-            {% for planner in planners %}
+            {% for plan in  planner %}
 
                 <li>
-                    <a href="/planner/{{ Planner.list }}">
-                        {{ planner.name }}
+                    <a href="/planner/{{ plan.id }}">
+
+                        {{ plan.name }}
                     </a>
                 </li>
 

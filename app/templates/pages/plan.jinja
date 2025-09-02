@@ -9,32 +9,32 @@
 
 {% block title %}
 
-    Flask Demo - Single Thing
+    Dinner Planner!
 
 {% endblock %}
 
 
 {% block content %}
 
-    <h1>A Single Thing...</h1>
+    <h1>Dinner</h1>
 
 
     <article>
 
         <header>
-            <h3>{{ planner.name }}</h3>
+            <h3>{{ plan.name }}</h3>
         </header>
 
-        <p>Name: <strong>${{ planner }}</strong></p>
+        <p>Meal: <strong>{{  }}</strong></p>
 
         <footer>
-            <a href="/delete/{{ Planner.list }}" onclick="return confirm('Really delete?');">Delete</a>
+            <a href="/delete/{{ plan.id }}" onclick="return confirm('Really delete?');">Delete</a>
         </footer>
 
     </article>
 
 
-    <a role="button" href="/Planner.list">Back to Thing List</a>
+    <a role="button" href="/">back</a>
 
 {% endblock %}
 
