@@ -55,19 +55,10 @@
             >
 
             <select type="text" name="meal" required>
-                <option value="noodles"> Noodles </option>
-                <option value="noodles"> Noodles </option>
-                <option value="noodles"> Noodles </option>
-                <option value="noodles"> Noodles </option>
-                <option value="noodles"> Noodles </option>
-                <option value="noodles"> Noodles </option>
-                <option value="noodles"> Noodles </option>
-                <option value="noodles"> Noodles </option>
-                <option value="noodles"> Noodles </option>
-                <option value="noodles"> Noodles </option>
-                <option value="noodles"> Noodles </option>
-                <option value="noodles"> Noodles </option>
-                
+                {% for meal in meals %}
+                    <option value=" {{meal.id}} "> {{meal.meal}} </option> 
+                {% endfor %}
+
             </select>
             <button>+ Add</button>
 

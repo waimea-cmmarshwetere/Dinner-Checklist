@@ -36,9 +36,14 @@ def show_all_planner():
         params = []
         result = client.execute(sql, params)
         planner = result.rows
+                
+        sql = "SELECT * FROM meals ORDER BY meal ASC"
+        params = []
+        result = client.execute(sql, params)
+        
 
         # And show them on the page
-        return render_template("pages/planner.jinja", planner=planner)
+        return render_template("pages/planner.jinja", planner=planner, meals = result.rows)
 
 
 #-----------------------------------------------------------
