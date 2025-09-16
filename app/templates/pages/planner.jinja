@@ -54,10 +54,13 @@
                 required
             >
 
-            <select type="text" name="meal" required>
-                {% for meal in meals %}
-                    <option value=" {{meal.id}} "> {{meal.meal}} </option> 
-                {% endfor %}
+            <input
+                type="text"
+                name="meal"
+                placeholder="meal"
+                required
+            >
+
 
             </select>
             <button>+ Add</button>

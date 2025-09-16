@@ -36,15 +36,9 @@ def show_all_planner():
         params = []
         result = client.execute(sql, params)
         planner = result.rows
-                
-        sql = "SELECT * FROM meals ORDER BY meal ASC"
-        params = []
-        result = client.execute(sql, params)
-        
 
         # And show them on the page
-        return render_template("pages/planner.jinja", planner=planner, meals = result.rows)
-
+        return render_template("pages/planner.jinja", planner=planner)
 
 #-----------------------------------------------------------
 # Thing page route - Show details of a single thing
@@ -56,6 +50,9 @@ def show_one_planner(id):
         sql = "SELECT id, name, meal FROM planner WHERE id=?"
         params = [id]
         result = client.execute(sql, params)
+
+        
+
 
         # Did we get a result?
         if result.rows:
