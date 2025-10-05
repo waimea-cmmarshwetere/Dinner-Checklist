@@ -47,7 +47,7 @@ def show_all_planner():
 def show_one_planner(id):
     with connect_db() as client:
         # Get the thing details from the DB
-        sql = "SELECT id, name, meal FROM planner WHERE id=?"
+        sql = "SELECT id, name, meal, date FROM planner WHERE id=?"
         params = [id]
         result = client.execute(sql, params)
 
@@ -73,6 +73,7 @@ def add_a_thing():
     # Get the data from the form
     name  = request.form.get("name")
     meal = request.form.get("meal")
+    date = request.form.get("date")
 
     # Sanitise the text inputs
     name = html.escape(name)
