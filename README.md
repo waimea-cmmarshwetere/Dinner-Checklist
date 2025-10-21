@@ -7,20 +7,15 @@ by YOUR NAME HERE
 
 ## Project Description
 
-Replace this text with your project description and list the key features below
+My project is about making dates for who inn your family will be making dinner and what they will be making
 
-- Feature 1 here
-- Feature 2 here
-- Feature 3 here
-- Feature 4 here
-- Feature 5 here
-
-
+- It will let the user add a dinner and date for when they will be making
 ---
 
 ## Project Links
 
 - [GitHub repo for the project](https://...)
+- [project documentation](https://waimea-cmmarshwetere.github.io/Dinner-Checklist/)
 - [Live web app](https://...)
 
 

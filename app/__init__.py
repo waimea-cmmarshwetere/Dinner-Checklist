@@ -80,8 +80,8 @@ def add_a_thing():
 
     with connect_db() as client:
         # Add the thing to the DB
-        sql = "INSERT INTO planner (name, meal) VALUES (?, ?)"
-        params = [name, meal]
+        sql = "INSERT INTO planner (name, meal, date) VALUES (?, ?, ?)"
+        params = [name, meal, date]
         client.execute(sql, params)
 
         # Go back to the home page
